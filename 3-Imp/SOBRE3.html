@@ -21,16 +21,39 @@
                 <h2><a class="nav" href="SOBRE3.html">Sobre</a></h2>
                 <h2><a class="nav" href="FOTOS3.html">Fotos</a></h2>
                 <h2><a class="nav" href="EVENTOS3.html">Eventos</a></h2>
-                <h2><a class="nav" href="#">Loja</a></h2>
-                <h2><a class="nav" href="#">Contato</a></h2>
-                <input type="text" placeholder="Pesquisar">
-            </nav>
-            <div class="login">
-                <img src="imagens/user icon branco.png" width="100%" height="60">
-                <a href="login.html" class="navlogin">Login</a>
-            </div>
-        </div>
-    </header>
+                <h2><a class="nav" href="LOJA3.html">Loja</a></h2>
+                <input type="text" style="width: 200px; padding: 0px; padding-right: none;" placeholder="Pesquisar">
+			</nav>
+				<img src="imagens/user icon branco.png" width="70px" height="50px">
+				<div class="loginbrabo">
+					<button onclick="document.getElementById('id01').style.display='block'"
+						style="width:auto;" class="loginbtn">Login</button>
+				</div>
+				<div id="id01" class="modallogin">
+					<form class="modal-contentlogin animate" action="/action_page.php" method="post">
+						<div class="imgcontainerlogin">
+						</div>
+						<div class="containerlogin">
+							<label for="uname"><b>Username</b></label>
+							<input type="text" placeholder="Enter Username" name="uname" required>
+
+							<label for="psw"><b>Password</b></label>
+							<input type="password" placeholder="Enter Password" name="psw" required>
+
+							<button type="submit" class="loginbtn" onclick="Login(event)">Login</button>
+							<label>
+								<input type="checkbox" checked="checked" name="remember"> Remember me
+							</label>
+						</div>
+
+						<div class="containerlogin" style="background-color:#f1f1f1">
+							<button type="button" onclick="document.getElementById('id01').style.display='none'"
+								class="cancelbtnlogin">Cancel</button>
+						</div>
+					</form>
+				</div>
+			</div>
+	</header>
     <main class="main">
         <section id="inicial" class="section">
             <div class="section-content">

@@ -36,11 +36,7 @@ p {
   justify-content: space-between;
   text-indent: 0px;
   padding: 10px;
-<<<<<<< HEAD
   padding-right: 10px;
-=======
-  padding-right: 100px;
->>>>>>> 800ed1f5e6cd76ddef1d2898f258fc0234d17ee2
   width: 100%;
 }
 
@@ -66,18 +62,6 @@ p {
   width: 100%;
 }
 
-<<<<<<< HEAD
-=======
-.navlogin {
-  list-style: circle;
-  display: flex;
-  text-align: center;
-  justify-content: space-between;
-  text-indent: 0px;
-  padding: 0px;
-  width: 100%;
-}
->>>>>>> 800ed1f5e6cd76ddef1d2898f258fc0234d17ee2
 
 .nav a:hover {
   background-color: #fe8957;
@@ -89,17 +73,6 @@ p {
   color: rgb(0, 0, 0);
 }
 
-<<<<<<< HEAD
-=======
-.nav li {
-  padding: 100px;
-}
-
-.login {
-  padding: 100 100rem;
-}
-
->>>>>>> 800ed1f5e6cd76ddef1d2898f258fc0234d17ee2
 .section {
   padding: 1.6rem;
 }
@@ -649,7 +622,6 @@ img {
   border: 1px solid #bfc5c5;
   border-radius: 3px;
   padding: 5px 1em;
-<<<<<<< HEAD
 }
 /*MODAL*/
 /* Full-width input fields */
@@ -1067,6 +1039,4 @@ span.psw {
       margin-left: 5%; 
   } 
 
-=======
->>>>>>> 800ed1f5e6cd76ddef1d2898f258fc0234d17ee2
 }
