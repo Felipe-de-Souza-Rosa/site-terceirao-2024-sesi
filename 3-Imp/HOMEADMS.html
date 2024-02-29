@@ -32,7 +32,9 @@
             <div id="id01" class="modallogin">
                 <form class="modal-contentlogin animate" action="/action_page.php" method="post">
                     <div class="imgcontainerlogin">
+
                     </div>
+
                     <div class="containerlogin">
                         <label for="uname"><b>Username</b></label>
                         <input type="text" placeholder="Enter Username" name="uname" required>
@@ -67,6 +69,64 @@
                 </div>
             </div>
             <section id="inicial" class="section"></section>
+            <center> <button class="button-34" id="createPostBtn" role="button">Create Post</button> </center>
+                <main class="post-container"> 
+                    <div id="createPostModal" class="modal"> 
+                        <div class="modal-content"> 
+                            <span class="close" id="closeModal">×</span> 
+                            <h2>Create a New Post</h2> 
+                            <form id="postForm"> 
+                                <div class="upper"> 
+                                    <div class="title"> 
+                                        <label class="postheading" for="postTitle"> 
+                                              Title 
+                                          </label> 
+                                        <input type="text" class="postTitle"
+                                         id="postTitle" name="postTitle"
+                                          autocomplete="off" required> 
+                                    </div> 
+                                    <div class="category1"> 
+                                        <label class="postheading" for="postCategory"> 
+                                              Category 
+                                          </label> 
+                                        <input type="text" class="postCategory"
+                                         id="postCategory" name="postCategory" 
+                                         autocomplete="off" required> 
+                                    </div> 
+                                </div> 
+              
+                                <label class="postheading" for="postDescription"> 
+                                      Description 
+                                  </label> 
+                                <textarea class="postDescription" id="postDescription" 
+                                           name="postDescription" autocomplete="off" 
+                                           required> 
+                                  </textarea> 
+              
+                                <button type="submit" id="postSubmitBtn" 
+                                class="postSubmitBtn">Post</button> 
+                            </form> 
+                        </div> 
+                    </div> 
+              
+                    <!-- Detail Modal -->
+                    <div id="postDetailModal" class="modal"> 
+                        <div class="modal-content"> 
+                            <span class="close" id="closeDetailModal"> 
+                                  × 
+                              </span> 
+                            <h1 id="detailTitle"></h1> 
+                            <span id="detailDate"></span> 
+                            <p id="detailDescription"></p> 
+                        </div> 
+                    </div> 
+              
+                    <div id="postCreatedMessage" class="post-message"> 
+                        Post created successfully! 
+                      </div> 
+              
+                </main> 
+            <div id="postList"></div>
             <section id="inicial" class="section"></section>
             <section id="inicial" class="section"></section>
             <form action="submit-form.php" method="posts" style="align-items: center;">
@@ -85,6 +145,7 @@
         <h2 class="cardfront">&copy; 2024 Terceirão Sesi. Todos os direitos reservados.</p>
     </footer>
     <script>
+        
         document.addEventListener('DOMContentLoaded', function () { 
     const createPostBtn =  
         document.getElementById('createPostBtn'); 
@@ -112,7 +173,6 @@
     createPostBtn.addEventListener('click', function () { 
         createPostModal.style.display = 'flex'; 
     }); 
-  
     closeModal.addEventListener('click', function () { 
         // Add fadeOut class 
         createPostModal.classList.add('fadeOut'); 
@@ -189,7 +249,64 @@
             postCreatedMessage.style.display = 'none'; 
         }, 3000); 
     }); 
-  
+            createPostBtn.addEventListener('click', () => {
+                document.getElementById('createPostModal').style.display = 'block';
+            });
+
+            closeModal.addEventListener('click', () => {
+                document.getElementById('createPostModal').style.display = 'none';
+            });
+
+            window.addEventListener('click', (event) => {
+                if (event.target == document.getElementById('createPostModal')) {
+                    document.getElementById('createPostModal').style.display = 'none';
+                }
+            });
+
+            postForm.addEventListener('submit', (event) => {
+                event.preventDefault();
+                if (!postTitle.value || !postCategory.value || !postDescription.value) {
+                    return;
+                }
+
+                const post = document.createElement('div');
+                post.classList.add('post');
+                post.innerHTML = `
+                    <div class="title">${postTitle.value}</div>
+                    <div class="category">${postCategory.value}</div>
+                    <div class="description">${postDescription.value}</div>
+                `;
+                postList.appendChild(postdiv
+                );
+
+                document.getElementById('createPostModal').style.display = 'none';
+                postCreatedMessage.style.display = 'block';
+
+                // Save the post in the local storage
+                const posts = JSON.parse(localStorage.getItem('posts')) || [];
+                posts.push({
+                    title: postTitle.value,
+                    category: postCategory.value,
+                    description: postDescription.value
+                });
+                localStorage.setItem('posts', JSON.stringify(posts));
+
+
+            // Load posts from the local storage
+            const savedPosts = JSON.parse(localStorage.getItem('posts'));
+            if (savedPosts) {
+                savedPosts.forEach(post => {
+                    const postEl = document.createElement('div');
+                    postEl.classList.add('post');
+                    postEl.innerHTML = `
+                        <div class="title">${post.title}</div>
+                        <div class="category">${post.category}</div>
+                        <div class="description">${post.description}</div>
+                    `;
+                    postList.appendChild(postEl);
+                });
+            }
+        });
     postContainer.addEventListener('click', function (event) { 
         if (event.target.classList.contains('load-more') || 
          event.target.classList.contains('post-title')) { 
@@ -235,9 +352,11 @@
              
            // Remove fadeOut class 
           postDetailModal.classList.remove('fadeOut');  
-        }, 500); 
-    }); 
-});     
+        }, 500);
+         
+    });
+}); 
+
     function Login(event) {
 		event.preventDefault();
 		var usuario = document.getElementsByName('uname')[0].value;
@@ -252,6 +371,8 @@
 		else{
 		alert("Dados incorretos, tente novamente");
 		}
-    }
+  	} 
+
     </script>
+
 </html>
