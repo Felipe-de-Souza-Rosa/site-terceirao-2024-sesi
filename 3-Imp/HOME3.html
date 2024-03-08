@@ -1,15 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Terceirão Sesi 2024</title>
     <link rel="shortcut icon" type="image/png" href="/imagens/user icon branco.png">
     <link rel="stylesheet" href="style.css">
+    <style>
+        /*TOPO DO SITE*/
+#logo{
+	padding-top: 20px;
+}
+/*MENU*/
+#menu{
+	color: white;
+	margin-top: 38px;
+}
+.links{
+	margin-left: 10px;
+	padding: 5px 10px;
+	text-decoration: none;
+	font-weight: bold;
+	font-size: 18px; 
+}
+.links:link, .links:visited {
+	color: white;
+}
+.links:hover{
+	color: #ffcc00;
+	background: white;
+}
+.links:active{
+	color: #ffcc00;
+	background: white;
+	border: 3px solid white;
+}
+/*POSTAGENS*/
+.postagem{
+	height: auto;
+	width: 700px;
+	background: white;
+	margin: 20px 0px 30px 250px;
+	padding: 30px 20px 20px 20px;
+}
+.titulo{
+	color: #ffcc00;	
+	font-size: 30px;
+	font-weight: bold;
+	padding: 0px;
+	margin: 0px;
+}
+.linkpost{
+	color: #ffcc00;
+	text-decoration: none;
+	margin-top: 0px;
+	margin-left: 5px;
+	margin-bottom: 0px;
+}
+p{
+	margin-bottom: 0px;
+}
+    </style>
 </head>
 
-<body style="background: 0%;">
+<body style="background-image: 0%;">
     <header class="header">
         <div class="header-content">
             <div class="terceiro_logo">
@@ -55,21 +109,30 @@
         </div>
     </header>
     <main class="main">
-        <section id="inicial" class="section">
+        <section id="inicial" class="section"></section>
             <div class="section-content">
                 <div class="headersobre" style="background-color: rgb(104, 8, 8);">
                     <h1 class="titlemax" style="font-size: 70px;">POST'S DO BLOG</h1>
-
                 </div>
+            </div>      
+            <section id="inicial" class="section"></section>
+            <section id="inicial" class="section"></section>
+            <div class="postagem">
+                <h2 class="titulo">Titúlo da postagem 1</h2>
+                <p style="margin-top: 0px;margin-left: 5px;font-size: 14px;">Postado em 20 de março de 2022</p>
+                <img src="C:\Users\Carol\Desktop\curso_sites\Projetos\Projeto 3-Tecblog\22-arquivos-necessarios-tecblog\imagem2.jpg" style="margin-top: 10px;"height="auto" width="700px">
+                <p style="margin-top: 4px;margin-left: 5px;width: 690px;">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </p>
+                <a href="" class="linkpost">Veja mais</a>
             </div>
             <section id="inicial" class="section"></section>
-            <section id="inicial" class="section"></section>
-                </div>
-            </div>
-            <section id="inicial" class="section"></section>
-            <section id="inicial" class="section"></section>
-            <section id="inicial" class="section"></section>
-            <form action="submit-form.php" method="posts" style="align-items: center;">
+            <form action="submit-form.php" method="posts" style="align-items: center;margin-left: 500px;">
                 <label for="namecomment">Nome:</label>
                 <input type="textname" id="name" name="name" required>
                 <label for="email">Email:</label>
@@ -78,180 +141,15 @@
                 <textarea id="message" name="message" rows="5" cols="30" required></textarea>
                 <button type="submit" class="button">Enviar</button>
             </form>
+            <section id="inicial" class="section"></section>
+            <section id="inicial" class="section"></section>
+            <section id="inicial" class="section"></section>
+            <section id="inicial" class="section"></section>
             </div>
-        </section>
     </main>
     <footer class="footer">
         <h2 class="cardfront">&copy; 2024 Terceirão Sesi. Todos os direitos reservados.</p>
     </footer>
     <script>
-        document.addEventListener('DOMContentLoaded', function () { 
-    const createPostBtn =  
-        document.getElementById('createPostBtn'); 
-    const createPostModal =  
-        document.getElementById('createPostModal'); 
-    const closeModal =  
-        document.getElementById('closeModal'); 
-    const postForm =  
-        document.getElementById('postForm'); 
-    const postSubmitBtn =  
-        document.getElementById('postSubmitBtn'); 
-    const postContainer =  
-        document.querySelector('.post-container'); 
-    const postDetailModal =  
-        document.getElementById('postDetailModal'); 
-    const closeDetailModal =  
-        document.getElementById('closeDetailModal'); 
-    const detailTitle =  
-        document.getElementById('detailTitle'); 
-    const detailDate =  
-        document.getElementById('detailDate'); 
-    const detailDescription =  
-        document.getElementById('detailDescription'); 
-  
-    createPostBtn.addEventListener('click', function () { 
-        createPostModal.style.display = 'flex'; 
-    }); 
-  
-    closeModal.addEventListener('click', function () { 
-        // Add fadeOut class 
-        createPostModal.classList.add('fadeOut'); 
-        setTimeout(() => { 
-            createPostModal.style.display = 'none'; 
-            // Remove fadeOut class 
-            createPostModal.classList.remove('fadeOut'); 
-        }, 500); 
-    }); 
-  
-    postForm.addEventListener('submit', function (event) { 
-        event.preventDefault(); 
-  
-        // Validation 
-        const postCategory =  
-            document.getElementById('postCategory').value; 
-        const postTitle =  
-            document.getElementById('postTitle').value; 
-        const postDescription =  
-            document.getElementById('postDescription').value; 
-  
-        if (postCategory.trim() === '' || 
-         postTitle.trim() === '' ||  
-         postDescription.trim() === '') { 
-            alert('Please fill out all fields.'); 
-            return; 
-        } 
-  
-        // Get the current date 
-        const currentDate = new Date(); 
-        const day = currentDate.getDate(); 
-        const month = currentDate.toLocaleString('default', 
-         { month: 'short' }); 
-        const year = currentDate.getFullYear(); 
-        const formattedDate = day + ' ' + month + ' ' + year; 
-  
-        // Create a new post element 
-        const newPost = document.createElement('div'); 
-        newPost.className = 'post-box'; 
-        newPost.innerHTML = ` 
-            <h1 class="post-title" data-title="${postTitle}"
-         data-date="${formattedDate}"
-          data-description="${postDescription}"> 
-            ${postTitle}</h1><br> 
-              
-        <h2 class="category">${postCategory}</h2><br> 
-        <span class="post-date">${formattedDate}</span> 
-        <p class="post-description"> 
-        ${postDescription.substring(0, 100)}...</p> 
-        <button class="delete-post" data-title="${postTitle}"> 
-        Delete</button> 
-        <span class="load-more" data-title="${postTitle}" 
-        data-date="${formattedDate}" 
-        data-description="${postDescription}"> 
-        Load more</span> 
-        `; 
-  
-        // Append the new post to the post container 
-        postContainer.insertBefore(newPost,  
-            postContainer.firstChild); 
-  
-        const postCreatedMessage = document 
-        .getElementById('postCreatedMessage'); 
-        postCreatedMessage.style.display = 'block'; 
-  
-  
-        // Close the modal 
-        createPostModal.style.display = 'none'; 
-  
-        // Reset the form 
-        postForm.reset(); 
-  
-        setTimeout(() => { 
-            postCreatedMessage.style.display = 'none'; 
-        }, 3000); 
-    }); 
-  
-    postContainer.addEventListener('click', function (event) { 
-        if (event.target.classList.contains('load-more') || 
-         event.target.classList.contains('post-title')) { 
-            const title = event.target.getAttribute('data-title'); 
-            const date = event.target.getAttribute('data-date'); 
-            const description =  
-                event.target.getAttribute('data-description'); 
-  
-            // Set content in detail modal 
-            detailTitle.textContent = title; 
-            detailDate.textContent = date; 
-            detailDescription.textContent = description; 
-  
-            // Display the detail modal 
-            postDetailModal.style.display = 'flex'; 
-        } 
-  
-        if (event.target.classList.contains('delete-post')) { 
-            const titleToDelete =  
-                event.target.getAttribute('data-title'); 
-            const postToDelete =  
-                document.querySelector(` 
-            .post-title[data-title= 
-                "${titleToDelete}"]`).closest('.post-box'); 
-  
-            // Add fadeOut class to initiate the animation 
-            postToDelete.classList.add('fadeOut'); 
-  
-            // Remove the post after the animation completes 
-            setTimeout(() => { 
-                postContainer.removeChild(postToDelete); 
-            }, 500); 
-  
-        } 
-    }); 
-  
-    closeDetailModal.addEventListener('click', function () { 
-      
-        // Add fadeOut class 
-        postDetailModal.classList.add('fadeOut');  
-        setTimeout(() => { 
-           postDetailModal.style.display = 'none'; 
-             
-           // Remove fadeOut class 
-          postDetailModal.classList.remove('fadeOut');  
-        }, 500); 
-    }); 
-});     
-    function Login(event) {
-		event.preventDefault();
-		var usuario = document.getElementsByName('uname')[0].value;
-		usuario = usuario.toLowerCase();
-		var senha = document.getElementsByName('psw')[0].value;
-		senha = senha.toLowerCase();
-	
-		if (usuario == "admin" && senha == "admin123") {
-		alert("Dados corretos");
-		window.location = "HOMEADMS.html";
-		}
-		else{
-		alert("Dados incorretos, tente novamente");
-		}
-    }
     </script>
 </html>
