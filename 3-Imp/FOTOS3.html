@@ -2,180 +2,186 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Terceirão Sesi 2024</title>
-    <link rel="shortcut icon" type="image/png" href="/imagens/user icon branco.png">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terceirão Sesi 2024</title>
+  <link rel="shortcut icon" type="image/png" href="/imagens/user icon branco.png">
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body style="background-image: 0%;">
-    <header class="header">
-        <div class="header-content">
-            <div class="terceiro_logo">
-                <img src="imagens/LOGO PNG TERCEIRO.png" alt="Terceirão Sesi 2024 " width="100%" height="200px">
+  <header class="header">
+    <div class="header-content">
+      <div class="terceiro_logo">
+        <img src="imagens/LOGO PNG TERCEIRO.png" alt="Terceirão Sesi 2024 " width="100%" height="200px">
+      </div>
+      <nav class="nav">
+        <h2><a class="nav"></a></h2>
+        <h2><a class="nav" href="index.html">Blog</a></h2>
+        <h2><a class="nav" href="SOBRE3.html">Sobre</a></h2>
+        <h2><a class="nav" href="FOTOS3.html">Fotos</a></h2>
+        <h2><a class="nav" href="EVENTOS3.html">Eventos</a></h2>
+        <h2><a class="nav" href="LOJA3.html">Loja</a></h2>
+        <input type="text" style="width: 200px; padding: 0px; padding-right: none;" placeholder="Pesquisar">
+      </nav>
+      <img src="imagens/user icon branco.png" width="70px" height="50px">
+      <div class="loginbrabo">
+        <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;"
+          class="loginbtn">Login</button>
+      </div>
+      <div id="id01" class="modallogin">
+        <form class="modal-contentlogin animate" action="/action_page.php" method="post">
+          <div class="imgcontainerlogin">
+          </div>
+          <div class="containerlogin">
+            <label for="uname"><b>Username</b></label>
+            <input type="text" placeholder="Enter Username" name="uname" required>
+
+            <label for="psw"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="psw" required>
+
+            <button type="submit" class="loginbtn" onclick="Login(event)">Login</button>
+            <label>
+              <input type="checkbox" checked="checked" name="remember"> Remember me
+            </label>
+          </div>
+
+          <div class="containerlogin" style="background-color:#f1f1f1">
+            <button type="button" onclick="document.getElementById('id01').style.display='none'"
+              class="cancelbtnlogin">Cancel</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </header>
+  <main class="main">
+    <section id="inicial" class="section">
+      <div class="section-content">
+        <div class="headersobre" style="background-color: rgb(240, 164, 22);">
+          <h1 class="titlemax" style="font-size: 70px;">GALERIA DE FOTOS</h1>
+        </div>
+        <section id="inicial" class="section"></section>
+        <div class="containerslides">
+          <div class="mySlides">
+            <div class="numbertext">1 / 6</div>
+            <img src="imagens/1920x1080 placeholder.jpg" style="width:100%">
+          </div>
+
+          <div class="mySlides">
+            <div class="numbertext">2 / 6</div>
+            <img src="imagens/caneca-terceirao.jpg" style="width:100%">
+          </div>
+
+          <div class="mySlides">
+            <div class="numbertext">3 / 6</div>
+            <img src="imagens/CAMISETA-PLACEHOLDER.webp" style="width: 500px">
+          </div>
+
+          <div class="mySlides">
+            <div class="numbertext">4 / 6</div>
+            <img src="imagens/user icon branco.png" style="width:500px">
+          </div>
+
+          <div class="mySlides">
+            <div class="numbertext">5 / 6</div>
+            <img src="imagens/1920x1080 placeholder.jpg" style="width:100%">
+          </div>
+
+          <div class="mySlides">
+            <div class="numbertext">6 / 6</div>
+            <img src="imagens/1920x1080 placeholder.jpg" style="width:100%">
+          </div>
+
+          <a class="prev" onclick="plusSlides(-1)">❮</a>
+          <a class="next" onclick="plusSlides(1)">❯</a>
+
+          <div class="caption-container">
+            <p id="caption"></p>
+          </div>
+
+          <div class="rowslides">
+            <div class="columnslides">
+              <img class="demo cursor" src="imagens/1920x1080 placeholder.jpg" style="width:100%"
+                onclick="currentSlide(1)" alt="Terceirinho Professores">
             </div>
-            <nav class="nav">
-                <h2><a class="nav"></a></h2>
-                <h2><a class="nav" href="HOME3.html">Blog</a></h2>
-                <h2><a class="nav" href="SOBRE3.html">Sobre</a></h2>
-                <h2><a class="nav" href="FOTOS3.html">Fotos</a></h2>
-                <h2><a class="nav" href="EVENTOS3.html">Eventos</a></h2>
-                <h2><a class="nav" href="LOJA3.html">Loja</a></h2>
-                <input type="text" style="width: 200px; padding: 0px; padding-right: none;" placeholder="Pesquisar">
-              </nav>
-                <img src="imagens/user icon branco.png" width="70px" height="50px">
-                <div class="loginbrabo">
-                  <button onclick="document.getElementById('id01').style.display='block'"
-                    style="width:auto;" class="loginbtn">Login</button>
-                </div>
-                <div id="id01" class="modallogin">
-                  <form class="modal-contentlogin animate" action="/action_page.php" method="post">
-                    <div class="imgcontainerlogin">
-                    </div>
-                    <div class="containerlogin">
-                      <label for="uname"><b>Username</b></label>
-                      <input type="text" placeholder="Enter Username" name="uname" required>
-        
-                      <label for="psw"><b>Password</b></label>
-                      <input type="password" placeholder="Enter Password" name="psw" required>
-        
-                      <button type="submit" class="loginbtn" onclick="Login(event)">Login</button>
-                      <label>
-                        <input type="checkbox" checked="checked" name="remember"> Remember me
-                      </label>
-                    </div>
-        
-                    <div class="containerlogin" style="background-color:#f1f1f1">
-                      <button type="button" onclick="document.getElementById('id01').style.display='none'"
-                        class="cancelbtnlogin">Cancel</button>
-                    </div>
-                  </form>
-                </div>
-              </div>
-          </header>
-    <main class="main">
-        <section id="inicial" class="section">
-            <div class="section-content">
-                <div class="headersobre" style="background-color: rgb(240, 164, 22);">
-                    <h1 class="titlemax" style="font-size: 70px;">GALERIA DE FOTOS</h1>
-                </div>
-                <section id="inicial" class="section"></section>
-                <div class="containerslides">
-                    <div class="mySlides">
-                      <div class="numbertext">1 / 6</div>
-                      <img src="imagens/1920x1080 placeholder.jpg" style="width:100%">
-                    </div>
-                  
-                    <div class="mySlides">
-                      <div class="numbertext">2 / 6</div>
-                      <img src="imagens/1920x1080 placeholder.jpg" style="width:100%">
-                    </div>
-                  
-                    <div class="mySlides">
-                      <div class="numbertext">3 / 6</div>
-                      <img src="imagens/1920x1080 placeholder.jpg" style="width:100%">
-                    </div>
-                      
-                    <div class="mySlides">
-                      <div class="numbertext">4 / 6</div>
-                      <img src="imagens/1920x1080 placeholder.jpg" style="width:100%">
-                    </div>
-                  
-                    <div class="mySlides">
-                      <div class="numbertext">5 / 6</div>
-                      <img src="imagens/1920x1080 placeholder.jpg" style="width:100%">
-                    </div>
-                      
-                    <div class="mySlides">
-                      <div class="numbertext">6 / 6</div>
-                      <img src="imagens/1920x1080 placeholder.jpg" style="width:100%">
-                    </div>
-                      
-                    <a class="prev" onclick="plusSlides(-1)">❮</a>
-                    <a class="next" onclick="plusSlides(1)">❯</a>
-                  
-                    <div class="caption-container">
-                      <p id="caption"></p>
-                    </div>
-                  
-                        <div class="rowslides">
-                            <div class="columnslides">
-                              <img class="demo cursor" src="imagens/1920x1080 placeholder.jpg" style="width:100%" onclick="currentSlide(1)" alt="Terceirinho Professores">
-                            </div>
-                            <div class="columnslides">
-                              <img class="demo cursor" src="imagens/1920x1080 placeholder.jpg" style="width:100%" onclick="currentSlide(2)" alt="Terceirinho Alunos">
-                            </div>
-                            <div class="columnslides">
-                              <img class="demo cursor" src="imagens/1920x1080 placeholder.jpg" style="width:100%" onclick="currentSlide(3)" alt="Mountains and fjords">
-                            </div>
-                            <div class="columnslides">
-                              <img class="demo cursor" src="imagens/1920x1080 placeholder.jpg" style="width:100%; " onclick="currentSlide(4)" alt="Northern Lights style='font-size: 100px;'">
-                            </div>
-                            <div class="columnslides">
-                              <img class="demo cursor" src="imagens/1920x1080 placeholder.jpg" style="width:100%" onclick="currentSlide(5)" alt="Nature and sunrise">
-                            </div>    
-                            <div class="columnslides">
-                              <img class="demo cursor" src="imagens/1920x1080 placeholder.jpg" style="width:100%" onclick="currentSlide(6)" alt="Snowy Mountains">
-                            </div>
-                          </div>
-                        </div>
-                    <section id="inicial" class="section"></section>
-                    <section id="inicial" class="section"></section>
-
-
-
-
-
-
-
-
-
-                <form action="submit-form.php" method="post">
-                    <label for="name">Nome:</label>
-                    <input type="text" id="name" name="name" required>
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required>
-                    <label for="message">Mensagem:</label>
-                    <textarea id="message" name="message" rows="5" cols="30" required></textarea>
-                    <button type="submit" class="button">Enviar</button>
-                </form>
+            <div class="columnslides">
+              <img class="demo cursor" src="imagens/caneca-terceirao.jpg" style="width:100%; height: 90px" onclick="currentSlide(2)"
+                alt="Terceirinho Alunos">
             </div>
-        </section>
-    </main>
-    <footer class="footer">
-        <h2 class="cardfront">&copy; 2024 Terceirão Sesi. Todos os direitos reservados.</p>
-    </footer>
-    <script>
-        let slideIndex = 1;
-        showSlides(slideIndex);
-        
-        function plusSlides(n) {
-          showSlides(slideIndex += n);
-        }
-        
-        function currentSlide(n) {
-          showSlides(slideIndex = n);
-        }
-        
-        function showSlides(n) {
-          let i;
-          let slides = document.getElementsByClassName("mySlides");
-          let dots = document.getElementsByClassName("demo");
-          let captionText = document.getElementById("caption");
-          if (n > slides.length) {slideIndex = 1}
-          if (n < 1) {slideIndex = slides.length}
-          for (i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none";
-          }
-          for (i = 0; i < dots.length; i++) {
-            dots[i].className = dots[i].className.replace(" active", "");
-          }
-          slides[slideIndex-1].style.display = "block";
-          dots[slideIndex-1].className += " active";
-          captionText.innerHTML = dots[slideIndex-1].alt;
-        }
-        </script>
+            <div class="columnslides">
+              <img class="demo cursor" src="imagens/CAMISETA-PLACEHOLDER.webp" style="width:100%; height: 90px"
+                onclick="currentSlide(3)" alt="Mountains and fjords">
+            </div>
+            <div class="columnslides">
+              <img class="demo cursor" src="imagens/user icon branco.png" style="width:100%; height: 90px " onclick="currentSlide(4)"
+                alt="Northern Lights">
+            </div>
+            <div class="columnslides">
+              <img class="demo cursor" src="imagens/1920x1080 placeholder.jpg" style="width:100%;height: 90px"
+                onclick="currentSlide(5)" alt="Nature and sunrise">
+            </div>
+            <div class="columnslides">
+              <img class="demo cursor" src="imagens/1920x1080 placeholder.jpg" style="width:100%; height: 90px""
+                onclick="currentSlide(6)" alt="Snowy Mountains">
+            </div>
+          </div>
+        </div>
+        <section id="inicial" class="section"></section>
+        <section id="inicial" class="section"></section>
+
+
+
+
+
+
+
+
+
+        <form action="submit-form.php" method="post">
+          <label for="name">Nome:</label>
+          <input type="text" id="name" name="name" required>
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required>
+          <label for="message">Mensagem:</label>
+          <textarea id="message" name="message" rows="5" cols="30" required></textarea>
+          <button type="submit" class="button">Enviar</button>
+        </form>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <h2 class="cardfront">&copy; 2024 Terceirão Sesi. Todos os direitos reservados.</p>
+  </footer>
+  <script>
+    let slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+      let i;
+      let slides = document.getElementsByClassName("mySlides");
+      let dots = document.getElementsByClassName("demo");
+      let captionText = document.getElementById("caption");
+      if (n > slides.length) { slideIndex = 1 }
+      if (n < 1) { slideIndex = slides.length }
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex - 1].style.display = "block";
+      dots[slideIndex - 1].className += " active";
+      captionText.innerHTML = dots[slideIndex - 1].alt;
+    }
+  </script>
 </body>
 
 </html>

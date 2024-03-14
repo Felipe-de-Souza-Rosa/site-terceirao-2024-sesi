@@ -1,144 +1,229 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Terceirão Sesi 2024</title>
-    <link rel="shortcut icon" type="image/png" href="/imagens/user icon branco.png">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terceirão Sesi 2024</title>
+  <link rel="shortcut icon" type="image/png" href="/imagens/user icon branco.png">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* modal */
+    /* =============================================== */
+    .modal-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 10;
+
+      display: none;
+      justify-content: center;
+      align-items: center;
+
+      width: 100%;
+      height: 100%;
+
+      background: hsla(0, 0%, 40%, .6);
+    }
+
+    /* using :target */
+    .modal-container:target {
+      display: flex;
+    }
+
+    .modal {
+      width: 60rem;
+      padding: 4rem 2rem;
+      border-radius: .8rem;
+
+      color: var(--light);
+      background: var(--background);
+      box-shadow: .4rem .4rem 2.4rem .2rem hsla(236, 50%, 50%, 0.3);
+      position: relative;
+
+      overflow: hidden;
+    }
+
+    .modal__details {
+      text-align: center;
+
+      margin-bottom: 4rem;
+      padding-bottom: 4rem;
+      border-bottom: 1px solid hsla(0, 0%, 100%, .4);
+    }
+
+    .modal__title {
+      font-size: 3.2rem;
+    }
+
+    .modal__description {
+      margin-top: 2rem;
+
+      font-size: 1.6rem;
+      font-style: italic;
+    }
+
+    .modal__text {
+      padding: 0 4rem;
+      margin-bottom: 4rem;
+
+      font-size: 1.6rem;
+      line-height: 2;
+    }
+
+    .modal__text::before {
+      content: '';
+
+      position: absolute;
+      top: 0%;
+      left: 100%;
+      transform: translate(-50%, -50%);
+
+      width: 18rem;
+      height: 18rem;
+      border: 1px solid hsla(0, 0%, 100%, .2);
+      border-radius: 100rem;
+
+      pointer-events: none;
+    }
+  </style>
 </head>
+
 <body style="background-image: 0%;">
-    <header class="header">
-        <div class="header-content">
-            <div class="terceiro_logo">
-                <img src="imagens/LOGO PNG TERCEIRO.png" alt="Terceirão Sesi 2024 " width="100%" height="200">
+  <header class="header">
+    <div class="header-content">
+      <div class="terceiro_logo">
+        <img src="imagens/LOGO PNG TERCEIRO.png" alt="Terceirão Sesi 2024 " width="100%" height="200">
+      </div>
+      <nav class="nav">
+        <h2><a class="nav"></a></h2>
+        <h2><a class="nav" href="HOME3.html">Blog</a></h2>
+        <h2><a class="nav" href="SOBRE3.html">Sobre</a></h2>
+        <h2><a class="nav" href="FOTOS3.html">Fotos</a></h2>
+        <h2><a class="nav" href="EVENTOS3.html">Eventos</a></h2>
+        <h2><a class="nav" href="LOJA3.html">Loja</a></h2>
+        <input type="text" style="width: 200px; padding: 0px; padding-right: none;" placeholder="Pesquisar">
+      </nav>
+      <img src="imagens/user icon branco.png" width="70px" height="50px">
+      <div class="loginbrabo">
+        <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;"
+          class="loginbtn">Login</button>
+      </div>
+      <div id="id01" class="modallogin">
+        <form class="modal-contentlogin animate" action="/action_page.php" method="post">
+          <div class="imgcontainerlogin">
+          </div>
+          <div class="containerlogin">
+            <label for="uname"><b>Username</b></label>
+            <input type="text" placeholder="Enter Username" name="uname" required>
+
+            <label for="psw"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="psw" required>
+
+            <button type="submit" class="loginbtn" onclick="Login(event)">Login</button>
+            <label>
+              <input type="checkbox" checked="checked" name="remember"> Remember me
+            </label>
+          </div>
+
+          <div class="containerlogin" style="background-color:#f1f1f1">
+            <button type="button" onclick="document.getElementById('id01').style.display='none'"
+              class="cancelbtnlogin">Cancel</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </header>
+  <main class="main">
+    <section id="inicial" class="section">
+      <div class="section-content">
+        <div class="headersobre" style="background-color: rgb(210, 92, 92);">
+          <h1 class="titlemax" style="font-size: 70px;">LOJINHA</h1>
+        </div>
+        <center>
+          <section id="inicial" class="section"></section>
+          <div class="containerproduct">
+            <div class="product-card">
+              <div class="product-image">
+                <!-- Add your image here -->
+                <img src="imagens/CAMISETA-PLACEHOLDER.webp" alt="Product Image" />
+              </div>
+              <div class="product-details">
+                <h2 class="product-title">Camiseta</h2>
+                <h4 class="product-price">$10</h4>
+                <button class="add-to-cart-btn">Add to Cart</button>
+                <form action="PRODUTO3.html">
+                <input class="view-btn" value="Ver mais" type="submit">
+                </form>
+              </div>
             </div>
-            <nav class="nav">
-                    <h2><a class="nav"></a></h2>
-                    <h2><a class="nav" href="HOME3.html">Blog</a></h2>
-                    <h2><a class="nav" href="SOBRE3.html">Sobre</a></h2>
-                    <h2><a class="nav" href="FOTOS3.html">Fotos</a></h2>
-                    <h2><a class="nav" href="EVENTOS3.html">Eventos</a></h2>
-                    <h2><a class="nav" href="LOJA3.html">Loja</a></h2>
-                    <input type="text" style="width: 200px; padding: 0px; padding-right: none;" placeholder="Pesquisar">
-			</nav>
-				<img src="imagens/user icon branco.png" width="70px" height="50px">
-				<div class="loginbrabo">
-					<button onclick="document.getElementById('id01').style.display='block'"
-						style="width:auto;" class="loginbtn">Login</button>
-				</div>
-				<div id="id01" class="modallogin">
-					<form class="modal-contentlogin animate" action="/action_page.php" method="post">
-						<div class="imgcontainerlogin">
-						</div>
-						<div class="containerlogin">
-							<label for="uname"><b>Username</b></label>
-							<input type="text" placeholder="Enter Username" name="uname" required>
-
-							<label for="psw"><b>Password</b></label>
-							<input type="password" placeholder="Enter Password" name="psw" required>
-
-							<button type="submit" class="loginbtn" onclick="Login(event)">Login</button>
-							<label>
-								<input type="checkbox" checked="checked" name="remember"> Remember me
-							</label>
-						</div>
-
-						<div class="containerlogin" style="background-color:#f1f1f1">
-							<button type="button" onclick="document.getElementById('id01').style.display='none'"
-								class="cancelbtnlogin">Cancel</button>
-						</div>
-					</form>
-				</div>
-			</div>
-	</header>
-    <main class="main">
-        <section id="inicial" class="section">
-            <div class="section-content">
-                <div class="headersobre" style="background-color: rgb(210, 92, 92);">
-                    <h1 class="titlemax" style="font-size: 70px;">LOJINHA</h1>
-                </div>
-                <center>
-                <section id="inicial" class="section"></section>
-                <div class="containerproduct">
-                    <div class="product-card">
-                      <div class="product-image">
-                        <!-- Add your image here -->
-                        <img src="imagens/CAMISETA-PLACEHOLDER.webp" alt="Product Image" />
-                      </div>
-                      <div class="product-details">
-                        <h2 class="product-title">Camiseta</h2>
-                        <h4 class="product-price">$10</h4>
-                        <button class="add-to-cart-btn">Add to Cart</button>
-                        <button class="view-btn">View</button>
-                      </div>
-                    </div>
-                  </div>
-                <section id="inicialado" class="sectionlado" style="width:20px; height: 20px;"></section>
-                <div class="containerproduct">
-                    <div class="product-card">
-                      <div class="product-image">
-                        <!-- Add your image here -->
-                        <img src="imagens/caneca-terceirao.jpg" alt="Product Image" />
-                      </div>
-                      <div class="product-details">
-                        <h2 class="product-title">Caneca</h2>
-                        <h4 class="product-price">$10</h4>
-                        <button class="add-to-cart-btn">Add to Cart</button>
-                        <button class="view-btn">View</button>
-                      </div>
-                    </div>
-                  </div>
-                  <section id="inicialado" class="sectionlado" style="width: 20px; height: 20px;"></section>
-                  <div class="containerproduct">
-                      <div class="product-card">
-                        <div class="product-image">
-                          <!-- Add your image here -->
-                          <img src="imagens/caneca-terceirao.jpg" alt="Product Image" />
-                        </div>
-                        <div class="product-details">
-                          <h2 class="product-title">Caneca</h2>
-                          <h4 class="product-price">$10</h4>
-                          <button class="add-to-cart-btn">Add to Cart</button>
-                          <button class="view-btn">View</button>
-                        </div>
-                      </div>
-                    </div>
-                    <section id="inicialado" class="sectionlado" style="width: 50px; height: 50px;"></section>
-                    <div class="containerproduct">
-                        <div class="product-card">
-                          <div class="product-image">
-                            <!-- Add your image here -->
-                            <img src="imagens/caneca-terceirao.jpg" alt="Product Image" />
-                          </div>
-                          <div class="product-details">
-                            <h2 class="product-title">Caneca</h2>
-                            <h4 class="product-price">$10</h4>
-                            <button class="add-to-cart-btn">Add to Cart</button>
-                            <button class="view-btn">View</button>
-                          </div>
-                        </div>
-                      </div>
-                </center>
-                    <br>
-                <section id="inicial" class="section"></section>
-                <section id="inicial" class="section"></section>
-                <section id="inicial" class="section"></section>
-                <br>
-               <form action="submit-form.php" method="post">
-                   <label for="name">Nome:</label>
-                   <input type="textname" id="name" name="name" required>
-                   <label for="email">Email:</label>
-                   <input type="email" id="email" name="email" required>
-                   <label for="message">Mensagem:</label>
-                   <textarea id="message" name="message" rows="5" cols="30" required></textarea>
-                   <button type="submit" class="button">Enviar</button>
-               </form>
-           </div>
-       </section>
-   </main>
-   <footer class="footer">
-       <h2 class="cardfront">&copy; 2024 Terceirão Sesi. Todos os direitos reservados.</p>
-   </footer>
+          </div>
+          <section id="inicialado" class="sectionlado" style="width:20px; height: 20px;"></section>
+          <div class="containerproduct">
+            <div class="product-card">
+              <div class="product-image">
+                <!-- Add your image here -->
+                <img src="imagens/caneca-terceirao.jpg" alt="Product Image" />
+              </div>
+              <div class="product-details">
+                <h2 class="product-title">Caneca</h2>
+                <h4 class="product-price">$10</h4>
+                <button class="add-to-cart-btn">Add to Cart</button>
+                <button class="view-btn">View</button>
+              </div>
+            </div>
+          </div>
+          <section id="inicialado" class="sectionlado" style="width: 20px; height: 20px;"></section>
+          <div class="containerproduct">
+            <div class="product-card">
+              <div class="product-image">
+                <!-- Add your image here -->
+                <img src="imagens/caneca-terceirao.jpg" alt="Product Image" />
+              </div>
+              <div class="product-details">
+                <h2 class="product-title">Caneca</h2>
+                <h4 class="product-price">$10</h4>
+                <button class="add-to-cart-btn">Add to Cart</button>
+                <button class="view-btn">View</button>
+              </div>
+            </div>
+          </div>
+          <section id="inicialado" class="sectionlado" style="width: 50px; height: 50px;"></section>
+          <div class="containerproduct">
+            <div class="product-card">
+              <div class="product-image">
+                <!-- Add your image here -->
+                <img src="imagens/caneca-terceirao.jpg" alt="Product Image" />
+              </div>
+              <div class="product-details">
+                <h2 class="product-title">Caneca</h2>
+                <h4 class="product-price">$10</h4>
+                <button class="add-to-cart-btn">Add to Cart</button>
+                <button class="view-btn">View</button>
+              </div>
+            </div>
+          </div>
+        </center>
+        <br>
+        <section id="inicial" class="section"></section>
+        <section id="inicial" class="section"></section>
+        <section id="inicial" class="section"></section>
+        <br>
+        <form action="submit-form.php" method="post">
+          <label for="name">Nome:</label>
+          <input type="textname" id="name" name="name" required>
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required>
+          <label for="message">Mensagem:</label>
+          <textarea id="message" name="message" rows="5" cols="30" required></textarea>
+          <button type="submit" class="button">Enviar</button>
+        </form>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <h2 class="cardfront">&copy; 2024 Terceirão Sesi. Todos os direitos reservados.</p>
+  </footer>
 </body>
-</html>              
+
+</html>
