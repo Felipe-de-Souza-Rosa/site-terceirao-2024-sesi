@@ -138,7 +138,7 @@
     <section id="inicial" class="section">
       <div class="section-content">
         <div class="headersobre" style="background-color: rgb(0, 95, 98);">
-          <h1 class="titlemax" style="font-size: 70px;">LOJINHA</h1>
+          <h1 class="titlemax" style="font-size: 70px;">LOJINHA ADM'S</h1>
         </div>
         <center>
           <section id="inicial" class="section"></section>
@@ -151,8 +151,9 @@
               <div class="product-details">
                 <h2 class="product-title">Camiseta</h2>
                 <h4 class="product-price">$10</h4>
-                <button class="add-to-cart-btn">Pôr no Carrinho</button>
-                <button class="view-btn">Ver mais</button>
+                <button class="add-to-cart-btn" onclick="vendercamiseta()">Vender</button>
+                <button class="view-btn" onclick="armazenarcamiseta()">Armazenar</button>
+                <h3 style="display: inline;">Quantidade:</h3><span id="quantcamisetamostra"></span>
                 </form>
               </div>
             </div>
@@ -167,8 +168,9 @@
               <div class="product-details">
                 <h2 class="product-title">Caneca</h2>
                 <h4 class="product-price">$10</h4>
-                <button class="add-to-cart-btn">Pôr no Carrinho</button>
-                <button class="view-btn">Ver mais</button>
+                <button class="add-to-cart-btn" onclick="vendercopo()">Vender</button>
+                <button class="view-btn" onclick="armazenarcopo()">Armazenar</button>
+                <h3 style="display: inline;">Quantidade:</h3><span id="quantcopomostra"></span>
               </div>
             </div>
           </div>
@@ -225,20 +227,39 @@
   </footer>
 </body>
 <script>
-  function Login(event) {
-    event.preventDefault();
-    var usuario = document.getElementsByName('uname')[0].value;
-    usuario = usuario.toLowerCase();
-    var senha = document.getElementsByName('psw')[0].value;
-    senha = senha.toLowerCase();
-
-    if (usuario == "admin" && senha == "admin123") {
-      alert("Dados corretos");
-      window.location = "LOJA3ADMS.html";
+  var quantcamiseta = parseInt(localStorage.getItem("quantcamiseta"))
+  var quantcopo = parseInt(localStorage.getItem("quantcopo"))
+  function armazenarcamiseta() {
+    if (isNaN(quantcamiseta) || quantcamiseta == null) {
+      quantcamiseta = 0
     }
-    else {
-      alert("Dados incorretos, tente novamente");
+    quantcamiseta = quantcamiseta + 1
+    localStorage.setItem("quantcamiseta", quantcamiseta)
+    document.getElementById("quantcamisetamostra").innerHTML = quantcamiseta;
+  }
+  function vendercamiseta() {
+    if (isNaN(quantcamiseta) || quantcamiseta == null) {
+      quantcamiseta = 0
     }
+    quantcamiseta = quantcamiseta - 1
+    localStorage.setItem("quantcamiseta", quantcamiseta)
+    document.getElementById("quantcamisetamostra").innerHTML = quantcamiseta;
+  }
+  function armazenarcopo() {
+    if (isNaN(quantcopo) || quantcopo == null) {
+      quantcopo = 0
+    }
+    quantcopo = quantcopo + 1
+    localStorage.setItem("quantcopo", quantcopo)
+    document.getElementById("quantcopomostra").innerHTML = quantcopo;
+  }
+  function vendercopo() {
+    if (isNaN(quantcopo) || quantcopo == null) {
+      quantcopo = 0
+    }
+    quantcopo = quantcopo - 1
+    localStorage.setItem("quantcopo", quantcopo)
+    document.getElementById("quantcopomostra").innerHTML = quantcopo;
   }
 </script>
 

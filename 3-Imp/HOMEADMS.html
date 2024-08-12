@@ -66,66 +66,62 @@
             </div>
             <section id="inicial" class="section"></section>
             <section id="inicial" class="section"></section>
-                </div>
+            </div>
             </div>
             <section id="inicial" class="section"></section>
             <center> <button class="button-34" id="createPostBtn" role="button">Create Post</button> </center>
-                <main class="post-container"> 
-                    <div id="createPostModal" class="modal"> 
-                        <div class="modal-content"> 
-                            <span class="close" id="closeModal">×</span> 
-                            <h2>Create a New Post</h2> 
-                            <form id="postForm"> 
-                                <div class="upper"> 
-                                    <div class="title"> 
-                                        <label class="postheading" for="postTitle"> 
-                                              Title 
-                                          </label> 
-                                        <input type="text" class="postTitle"
-                                         id="postTitle" name="postTitle"
-                                          autocomplete="off" required> 
-                                    </div> 
-                                    <div class="category1"> 
-                                        <label class="postheading" for="postCategory"> 
-                                              Category 
-                                          </label> 
-                                        <input type="text" class="postCategory"
-                                         id="postCategory" name="postCategory" 
-                                         autocomplete="off" required> 
-                                    </div> 
-                                </div> 
-              
-                                <label class="postheading" for="postDescription"> 
-                                      Description 
-                                  </label> 
-                                <textarea class="postDescription" id="postDescription" 
-                                           name="postDescription" autocomplete="off" 
-                                           required> 
-                                  </textarea> 
-              
-                                <button type="submit" id="postSubmitBtn" 
-                                class="postSubmitBtn">Post</button> 
-                            </form> 
-                        </div> 
-                    </div> 
-              
-                    <!-- Detail Modal -->
-                    <div id="postDetailModal" class="modal"> 
-                        <div class="modal-content"> 
-                            <span class="close" id="closeDetailModal"> 
-                                  × 
-                              </span> 
-                            <h1 id="detailTitle"></h1> 
-                            <span id="detailDate"></span> 
-                            <p id="detailDescription"></p> 
-                        </div> 
-                    </div> 
-              
-                    <div id="postCreatedMessage" class="post-message"> 
-                        Post created successfully! 
-                      </div> 
-              
-                </main> 
+            <main class="post-container">
+                <div id="createPostModal" class="modal">
+                    <div class="modal-content">
+                        <span class="close" id="closeModal">×</span>
+                        <h2>Create a New Post</h2>
+                        <form id="postForm">
+                            <div class="upper">
+                                <div class="title">
+                                    <label class="postheading" for="postTitle">
+                                        Title
+                                    </label>
+                                    <input type="text" class="postTitle" id="postTitle" name="postTitle"
+                                        autocomplete="off" required>
+                                </div>
+                                <div class="category1">
+                                    <label class="postheading" for="postCategory">
+                                        Category
+                                    </label>
+                                    <input type="text" class="postCategory" id="postCategory" name="postCategory"
+                                        autocomplete="off" required>
+                                </div>
+                            </div>
+
+                            <label class="postheading" for="postDescription">
+                                Description
+                            </label>
+                            <textarea class="postDescription" id="postDescription" name="postDescription"
+                                autocomplete="off" required>
+                                  </textarea>
+
+                            <button type="submit" id="postSubmitBtn" class="postSubmitBtn">Post</button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Detail Modal -->
+                <div id="postDetailModal" class="modal">
+                    <div class="modal-content">
+                        <span class="close" id="closeDetailModal">
+                            ×
+                        </span>
+                        <h1 id="detailTitle"></h1>
+                        <span id="detailDate"></span>
+                        <p id="detailDescription"></p>
+                    </div>
+                </div>
+
+                <div id="postCreatedMessage" class="post-message">
+                    Post created successfully!
+                </div>
+
+            </main>
             <div id="postList"></div>
             <section id="inicial" class="section"></section>
             <section id="inicial" class="section"></section>
@@ -145,74 +141,74 @@
         <h2 class="cardfront">&copy; 2024 Terceirão Sesi. Todos os direitos reservados.</p>
     </footer>
     <script>
-        
-        document.addEventListener('DOMContentLoaded', function () { 
-    const createPostBtn =  
-        document.getElementById('createPostBtn'); 
-    const createPostModal =  
-        document.getElementById('createPostModal'); 
-    const closeModal =  
-        document.getElementById('closeModal'); 
-    const postForm =  
-        document.getElementById('postForm'); 
-    const postSubmitBtn =  
-        document.getElementById('postSubmitBtn'); 
-    const postContainer =  
-        document.querySelector('.post-container'); 
-    const postDetailModal =  
-        document.getElementById('postDetailModal'); 
-    const closeDetailModal =  
-        document.getElementById('closeDetailModal'); 
-    const detailTitle =  
-        document.getElementById('detailTitle'); 
-    const detailDate =  
-        document.getElementById('detailDate'); 
-    const detailDescription =  
-        document.getElementById('detailDescription'); 
-  
-    createPostBtn.addEventListener('click', function () { 
-        createPostModal.style.display = 'flex'; 
-    }); 
-    closeModal.addEventListener('click', function () { 
-        // Add fadeOut class 
-        createPostModal.classList.add('fadeOut'); 
-        setTimeout(() => { 
-            createPostModal.style.display = 'none'; 
-            // Remove fadeOut class 
-            createPostModal.classList.remove('fadeOut'); 
-        }, 500); 
-    }); 
-  
-    postForm.addEventListener('submit', function (event) { 
-        event.preventDefault(); 
-  
-        // Validation 
-        const postCategory =  
-            document.getElementById('postCategory').value; 
-        const postTitle =  
-            document.getElementById('postTitle').value; 
-        const postDescription =  
-            document.getElementById('postDescription').value; 
-  
-        if (postCategory.trim() === '' || 
-         postTitle.trim() === '' ||  
-         postDescription.trim() === '') { 
-            alert('Please fill out all fields.'); 
-            return; 
-        } 
-  
-        // Get the current date 
-        const currentDate = new Date(); 
-        const day = currentDate.getDate(); 
-        const month = currentDate.toLocaleString('default', 
-         { month: 'short' }); 
-        const year = currentDate.getFullYear(); 
-        const formattedDate = day + ' ' + month + ' ' + year; 
-  
-        // Create a new post element 
-        const newPost = document.createElement('div'); 
-        newPost.className = 'post-box'; 
-        newPost.innerHTML = ` 
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const createPostBtn =
+                document.getElementById('createPostBtn');
+            const createPostModal =
+                document.getElementById('createPostModal');
+            const closeModal =
+                document.getElementById('closeModal');
+            const postForm =
+                document.getElementById('postForm');
+            const postSubmitBtn =
+                document.getElementById('postSubmitBtn');
+            const postContainer =
+                document.querySelector('.post-container');
+            const postDetailModal =
+                document.getElementById('postDetailModal');
+            const closeDetailModal =
+                document.getElementById('closeDetailModal');
+            const detailTitle =
+                document.getElementById('detailTitle');
+            const detailDate =
+                document.getElementById('detailDate');
+            const detailDescription =
+                document.getElementById('detailDescription');
+
+            createPostBtn.addEventListener('click', function () {
+                createPostModal.style.display = 'flex';
+            });
+            closeModal.addEventListener('click', function () {
+                // Add fadeOut class 
+                createPostModal.classList.add('fadeOut');
+                setTimeout(() => {
+                    createPostModal.style.display = 'none';
+                    // Remove fadeOut class 
+                    createPostModal.classList.remove('fadeOut');
+                }, 500);
+            });
+
+            postForm.addEventListener('submit', function (event) {
+                event.preventDefault();
+
+                // Validation 
+                const postCategory =
+                    document.getElementById('postCategory').value;
+                const postTitle =
+                    document.getElementById('postTitle').value;
+                const postDescription =
+                    document.getElementById('postDescription').value;
+
+                if (postCategory.trim() === '' ||
+                    postTitle.trim() === '' ||
+                    postDescription.trim() === '') {
+                    alert('Please fill out all fields.');
+                    return;
+                }
+
+                // Get the current date 
+                const currentDate = new Date();
+                const day = currentDate.getDate();
+                const month = currentDate.toLocaleString('default',
+                    { month: 'short' });
+                const year = currentDate.getFullYear();
+                const formattedDate = day + ' ' + month + ' ' + year;
+
+                // Create a new post element 
+                const newPost = document.createElement('div');
+                newPost.className = 'post-box';
+                newPost.innerHTML = ` 
             <h1 class="post-title" data-title="${postTitle}"
          data-date="${formattedDate}"
           data-description="${postDescription}"> 
@@ -228,27 +224,27 @@
         data-date="${formattedDate}" 
         data-description="${postDescription}"> 
         Load more</span> 
-        `; 
-  
-        // Append the new post to the post container 
-        postContainer.insertBefore(newPost,  
-            postContainer.firstChild); 
-  
-        const postCreatedMessage = document 
-        .getElementById('postCreatedMessage'); 
-        postCreatedMessage.style.display = 'block'; 
-  
-  
-        // Close the modal 
-        createPostModal.style.display = 'none'; 
-  
-        // Reset the form 
-        postForm.reset(); 
-  
-        setTimeout(() => { 
-            postCreatedMessage.style.display = 'none'; 
-        }, 3000); 
-    }); 
+        `;
+
+                // Append the new post to the post container 
+                postContainer.insertBefore(newPost,
+                    postContainer.firstChild);
+
+                const postCreatedMessage = document
+                    .getElementById('postCreatedMessage');
+                postCreatedMessage.style.display = 'block';
+
+
+                // Close the modal 
+                createPostModal.style.display = 'none';
+
+                // Reset the form 
+                postForm.reset();
+
+                setTimeout(() => {
+                    postCreatedMessage.style.display = 'none';
+                }, 3000);
+            });
             createPostBtn.addEventListener('click', () => {
                 document.getElementById('createPostModal').style.display = 'block';
             });
@@ -292,86 +288,86 @@
                 localStorage.setItem('posts', JSON.stringify(posts));
 
 
-            // Load posts from the local storage
-            const savedPosts = JSON.parse(localStorage.getItem('posts'));
-            if (savedPosts) {
-                savedPosts.forEach(post => {
-                    const postEl = document.createElement('div');
-                    postEl.classList.add('post');
-                    postEl.innerHTML = `
+                // Load posts from the local storage
+                const savedPosts = JSON.parse(localStorage.getItem('posts'));
+                if (savedPosts) {
+                    savedPosts.forEach(post => {
+                        const postEl = document.createElement('div');
+                        postEl.classList.add('post');
+                        postEl.innerHTML = `
                         <div class="title">${post.title}</div>
                         <div class="category">${post.category}</div>
                         <div class="description">${post.description}</div>
                     `;
-                    postList.appendChild(postEl);
-                });
-            }
-        });
-    postContainer.addEventListener('click', function (event) { 
-        if (event.target.classList.contains('load-more') || 
-         event.target.classList.contains('post-title')) { 
-            const title = event.target.getAttribute('data-title'); 
-            const date = event.target.getAttribute('data-date'); 
-            const description =  
-                event.target.getAttribute('data-description'); 
-  
-            // Set content in detail modal 
-            detailTitle.textContent = title; 
-            detailDate.textContent = date; 
-            detailDescription.textContent = description; 
-  
-            // Display the detail modal 
-            postDetailModal.style.display = 'flex'; 
-        } 
-  
-        if (event.target.classList.contains('delete-post')) { 
-            const titleToDelete =  
-                event.target.getAttribute('data-title'); 
-            const postToDelete =  
-                document.querySelector(` 
-            .post-title[data-title= 
-                "${titleToDelete}"]`).closest('.post-box'); 
-  
-            // Add fadeOut class to initiate the animation 
-            postToDelete.classList.add('fadeOut'); 
-  
-            // Remove the post after the animation completes 
-            setTimeout(() => { 
-                postContainer.removeChild(postToDelete); 
-            }, 500); 
-  
-        } 
-    }); 
-  
-    closeDetailModal.addEventListener('click', function () { 
-      
-        // Add fadeOut class 
-        postDetailModal.classList.add('fadeOut');  
-        setTimeout(() => { 
-           postDetailModal.style.display = 'none'; 
-             
-           // Remove fadeOut class 
-          postDetailModal.classList.remove('fadeOut');  
-        }, 500);
-         
-    });
-}); 
+                        postList.appendChild(postEl);
+                    });
+                }
+            });
+            postContainer.addEventListener('click', function (event) {
+                if (event.target.classList.contains('load-more') ||
+                    event.target.classList.contains('post-title')) {
+                    const title = event.target.getAttribute('data-title');
+                    const date = event.target.getAttribute('data-date');
+                    const description =
+                        event.target.getAttribute('data-description');
 
-    function Login(event) {
-		event.preventDefault();
-		var usuario = document.getElementsByName('uname')[0].value;
-		usuario = usuario.toLowerCase();
-		var senha = document.getElementsByName('psw')[0].value;
-		senha = senha.toLowerCase();
-	
-		if (usuario == "admin" && senha == "admin123") {
-		alert("Dados corretos");
-		window.location = "HOMEADMS.html";
-		}
-		else{
-		alert("Dados incorretos, tente novamente");
-		}
-  	} 
+                    // Set content in detail modal 
+                    detailTitle.textContent = title;
+                    detailDate.textContent = date;
+                    detailDescription.textContent = description;
+
+                    // Display the detail modal 
+                    postDetailModal.style.display = 'flex';
+                }
+
+                if (event.target.classList.contains('delete-post')) {
+                    const titleToDelete =
+                        event.target.getAttribute('data-title');
+                    const postToDelete =
+                        document.querySelector(` 
+            .post-title[data-title= 
+                "${titleToDelete}"]`).closest('.post-box');
+
+                    // Add fadeOut class to initiate the animation 
+                    postToDelete.classList.add('fadeOut');
+
+                    // Remove the post after the animation completes 
+                    setTimeout(() => {
+                        postContainer.removeChild(postToDelete);
+                    }, 500);
+
+                }
+            });
+
+            closeDetailModal.addEventListener('click', function () {
+
+                // Add fadeOut class 
+                postDetailModal.classList.add('fadeOut');
+                setTimeout(() => {
+                    postDetailModal.style.display = 'none';
+
+                    // Remove fadeOut class 
+                    postDetailModal.classList.remove('fadeOut');
+                }, 500);
+
+            });
+        });
+
+        function Login(event) {
+            event.preventDefault();
+            var usuario = document.getElementsByName('uname')[0].value;
+            usuario = usuario.toLowerCase();
+            var senha = document.getElementsByName('psw')[0].value;
+            senha = senha.toLowerCase();
+
+            if (usuario == "admin" && senha == "admin123") {
+                alert("Dados corretos");
+                window.location = "HOMEADMS.html";
+            }
+            else {
+                alert("Dados incorretos, tente novamente");
+            }
+        }
 
     </script>
 
