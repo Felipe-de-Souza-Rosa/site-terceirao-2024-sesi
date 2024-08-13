@@ -86,8 +86,14 @@
             display: inline;
         }
 
-        .likebtn {
-            background-image: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAAAXNSR0IArs4c6QAAAmNJREFUWEftl0tIVkEYhh81qXYt0hQLozYR0aLSjaC1KMKiVdFGaFUQtSlo001ERXBRiy4IBq2EqI1gEd2oyIIi24nSokCh2yYQg4ouziufMJ3mzzP8/P8Rc1bn8p15n/PdZqaEOTZK5hgP8xJoI3AV2OR5exTYCwzHRiBfD1UAr4CVAeEPwGrgWwxUPkCLgUFgyz8E9wADxQK67kKyz8R+Ac3AHeAhsNWe7wZuFQPoJNDpCR0HzgMrgPcwXSy/gWrgY6GBFIZ+E5XWFeCgiR4BLtr1E6AxBka2sTm0HngJLDWhpy5ETcBPu3/sQRwFLhUSSBU1BKwykbcuYTcDn+0+73DFeKgckDfqTHzCrl97HpBHLtj9I2BbrHdCQArhaUC5oD8ODVXUDuBB4qUgFL60Q8muH/CL468cOgccm2XGw0BPwOaTyxmFNXa0A2dnPkomdZpJcxWCIA8ASyKJ3gE1uYDUO0Lvcj2P1P7DPDhn8m//W6AyVzw/QtHIykM7gdsGNOa2L7VZ59A1YL9BdAFaG6dHFh5aBqia1Ww11rjqVNfPDEh97LLpPwMa/NrLwkPPgXqDOOR6UG+WQOtc7owYwFe3VVkOfMkSqNsBnDCAPqAl2VmLGbJSQBv/mfVuO3A/S6Bd7kBw0wC0fumk4q8MRa+yG3ZWk3CH22WeCS2EyZB99/pDm/dBq3ftPw/NmevZKQeyyF6uBd6kAXrh7QpjxGJsdVTS0hEcSQ9tcI3qntuAVcUoRNhOAjoojKcFkp2qQAfAygihNKbqP3e9Q0EqD6WZuKA2seeygsJo8gWg2Vw8BXwKciVbZ3aWAAAAAElFTkSuQmCC";
+        .like {
+            border:0px;
+            background-color: transparent;
+            font-size:30px;  
+
+        }
+        .like:hover{
+            cursor:pointer;
         }
     </style>
 </head>
@@ -160,11 +166,11 @@
                 proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
             </p>
             <a href="" class="linkpost">Veja mais</a>
-            <button style="margin-left: 400px;" id="likebtn" alt="Imagem" onclick="gostei()">Gostei</button>
-            <span id="like" value="0"
-                style="font: 20px Arial;color: blue; border: 0px;margin-right: 5px;margin-left: 2px;">0</span>
-            <button style="margin-left: 0px;" id="dislikebtn" alt="Imagem" onclick="ngostei()">Não Gostei</button>
-            <span id="dislike" value="0" style="font: 20px Arial;color: red; border: 0px;margin-right: 2px;">0</span>
+            <button style="margin-left: 400px;" id="likebtn1" class="like" onclick="gostei()">👍</button>
+            <span id="like1" value="0"
+                style="font: 20px Arial;color: blue; border: 0px;margin-right: 5px;margin-left: 2px;"></span>
+            <button style="margin-left: 0px;" id="dislikebtn1"class="like" onclick="ngostei()">👎</button>
+            <span id="dislike1" value="0" style="font: 20px Arial;color: red; border: 0px;margin-right: 2px;"></span>
         </div>
         <section id="inicialado" class="sectionlado" style="width: 50px; height: 50px;"></section>
         <div class="postagem2">
@@ -180,11 +186,11 @@
                 proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
             </p>
             <a href="" class="linkpost">Veja mais</a>
-            <button style="margin-left: 400px;" id="likebtn" alt="Imagem" onclick="gostei2()">Gostei</button>
+            <button style="margin-left: 400px;" id="likebtn2" class="like" onclick="gostei()">👍</button>
             <span id="like2" value="0"
-                style="font: 20px Arial;color: blue; border: 0px;margin-right: 5px;margin-left: 2px;">0</span>
-            <button style="margin-left: 0px;" id="dislikebtn" alt="Imagem" onclick="ngostei2()">Não Gostei</button>
-            <span id="dislike2" value="0" style="font: 20px Arial;color: red; border: 0px;margin-right: 2px;">0</span>
+                style="font: 20px Arial;color: blue; border: 0px;margin-right: 5px;margin-left: 2px;"></span>
+            <button style="margin-left: 0px;" id="dislikebtn2" class="like" onclick="ngostei()">👎</button>
+            <span id="dislike2" value="0" style="font: 20px Arial;color: red; border: 0px;margin-right: 2px;"></span>
         </div>
         <section id="inicial" class="section"></section>
         <form action="submit-form.php" method="posts" style="align-items: center;margin-left: 500px;">
@@ -203,18 +209,56 @@
         <h2 class="cardfront">&copy; 2024 Terceirão Sesi. Todos os direitos reservados.</p>
     </footer>
     <script>
-        function gostei() {
-            document.getElementById('like').innerHTML = parseInt(document.getElementById('like').innerHTML) + 1;
+        var like1 = parseInt(localStorage.getItem('like1')) ;
+        var dislike1 = parseInt(localStorage.getItem('dislike1')) ;
+        var like2 = parseInt(localStorage.getItem('like2')) ;
+        var dislike2 = parseInt(localStorage.getItem('dislike2')) ;
+        document.getElementById('like1').innerHTML = like1;
+        document.getElementById('dislike1').innerHTML = dislike1;
+        document.getElementById('like2').innerHTML = like2;
+        document.getElementById('dislike2').innerHTML = dislike2;
+        function gostei(post) {
+        if (isNaN(like1) || isNaN(like2)) {
+                like1 = 0;
+                like2 = 0;
+            }
+            if (post === '1') {
+                like1 = like1 + 1;
+                localStorage.setItem('like1', like1);
+                document.getElementById('like1').innerHTML = like1;
+            } else if (post === '2') {
+                like2 = like2 + 1;
+                localStorage.setItem('like2', like2);
+                document.getElementById('like2').innerHTML = parseInt(like2);
+            }
         }
-        function gostei2() {
-            document.getElementById('like2').innerHTML = parseInt(document.getElementById('like2').innerHTML) + 1;
+        function ngostei(post) {
+            if (isNaN(dislike1) || isNaN(dislike2)) {
+                dislike1 = 0;
+                dislike2 = 0;
+            }
+            if (post === '1') {
+                dislike1++;
+                localStorage.setItem('dislike1', dislike1);
+                document.getElementById('dislike1').innerHTML = dislike1;
+            } else if (post === '2') {
+                dislike2++;
+                localStorage.setItem('dislike2', dislike2);
+                document.getElementById('dislike2').innerHTML = dislike2;
+            }
         }
-        function ngostei() {
-            document.getElementById('dislike').innerHTML = parseInt(document.getElementById('dislike').innerHTML) + 1;
-        }
-        function ngostei2() {
-            document.getElementById('dislike2').innerHTML = parseInt(document.getElementById('dislike2').innerHTML) + 1;
-        }
+        document.getElementById('likebtn1').addEventListener('click', function() {
+            gostei('1');
+        });
+        document.getElementById('likebtn2').addEventListener('click', function() {
+            gostei('2');
+        });
+        document.getElementById('dislikebtn1').addEventListener('click', function() {
+            ngostei('1');
+        });
+        document.getElementById('dislikebtn2').addEventListener('click', function() {
+            ngostei('2');
+        });
     </script>
 
 </html>
