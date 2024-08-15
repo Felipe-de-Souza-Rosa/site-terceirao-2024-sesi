@@ -87,13 +87,14 @@
         }
 
         .like {
-            border:0px;
+            border: 0px;
             background-color: transparent;
-            font-size:30px;  
+            font-size: 30px;
 
         }
-        .like:hover{
-            cursor:pointer;
+
+        .like:hover {
+            cursor: pointer;
         }
     </style>
 </head>
@@ -169,7 +170,7 @@
             <button style="margin-left: 400px;" id="likebtn1" class="like" onclick="gostei()">👍</button>
             <span id="like1" value="0"
                 style="font: 20px Arial;color: blue; border: 0px;margin-right: 5px;margin-left: 2px;"></span>
-            <button style="margin-left: 0px;" id="dislikebtn1"class="like" onclick="ngostei()">👎</button>
+            <button style="margin-left: 0px;" id="dislikebtn1" class="like" onclick="ngostei()">👎</button>
             <span id="dislike1" value="0" style="font: 20px Arial;color: red; border: 0px;margin-right: 2px;"></span>
         </div>
         <section id="inicialado" class="sectionlado" style="width: 50px; height: 50px;"></section>
@@ -209,16 +210,16 @@
         <h2 class="cardfront">&copy; 2024 Terceirão Sesi. Todos os direitos reservados.</p>
     </footer>
     <script>
-        var like1 = parseInt(localStorage.getItem('like1')) ;
-        var dislike1 = parseInt(localStorage.getItem('dislike1')) ;
-        var like2 = parseInt(localStorage.getItem('like2')) ;
-        var dislike2 = parseInt(localStorage.getItem('dislike2')) ;
+        var like1 = parseInt(localStorage.getItem('like1'));
+        var dislike1 = parseInt(localStorage.getItem('dislike1'));
+        var like2 = parseInt(localStorage.getItem('like2'));
+        var dislike2 = parseInt(localStorage.getItem('dislike2'));
         document.getElementById('like1').innerHTML = like1;
         document.getElementById('dislike1').innerHTML = dislike1;
         document.getElementById('like2').innerHTML = like2;
         document.getElementById('dislike2').innerHTML = dislike2;
         function gostei(post) {
-        if (isNaN(like1) || isNaN(like2)) {
+            if (isNaN(like1) || isNaN(like2)) {
                 like1 = 0;
                 like2 = 0;
             }
@@ -247,16 +248,16 @@
                 document.getElementById('dislike2').innerHTML = dislike2;
             }
         }
-        document.getElementById('likebtn1').addEventListener('click', function() {
+        document.getElementById('likebtn1').addEventListener('click', function () {
             gostei('1');
         });
-        document.getElementById('likebtn2').addEventListener('click', function() {
+        document.getElementById('likebtn2').addEventListener('click', function () {
             gostei('2');
         });
-        document.getElementById('dislikebtn1').addEventListener('click', function() {
+        document.getElementById('dislikebtn1').addEventListener('click', function () {
             ngostei('1');
         });
-        document.getElementById('dislikebtn2').addEventListener('click', function() {
+        document.getElementById('dislikebtn2').addEventListener('click', function () {
             ngostei('2');
         });
     </script>
