@@ -198,7 +198,66 @@
                 <h2 class="product-title">Caneca</h2>
                 <h4 class="product-price">$10</h4>
                 <button class="add-to-cart-btn">Pôr no Carrinho</button>
-                <button class="view-btn">Ver mais</button>
+                <button class="view-btn" onclick="document.getElementById('id02').style.display='block'">Ver
+                  mais</button>
+                <div id="id02" class="modallogin">
+                  <form class="modal-contentlogin animate" action="/action_page.php" method="post">
+                    <div class="imgcontainerproduto1">
+                      <div class="containerslidesprodutos">
+                        <div class="mySlides">
+                          <div class="numbertext">1 / 3</div>
+                          <img src="imagens/caneca-terceirao.jpg" style="max-width: 500px;max-height: 300px;">
+                        </div>
+
+                        <div class="mySlides">
+                          <div class="numbertext">2 / 3</div>
+                          <img src="imagens/caneca-terceirao2.webp" style="max-width: 500px;max-height: 300px;">
+                        </div>
+
+                        <div class="mySlides">
+                          <div class="numbertext">3 / 3</div>
+                          <img src="imagens/caneca-terceirao3.jpg" style="max-width: 500px;max-height: 300px;">
+                        </div>
+
+                        <a class="prev" onclick="plusSlides(-1)">❮</a>
+                        <a class="next" onclick="plusSlides(1)">❯</a>
+
+                        <div class="caption-container">
+                          <p id="caption"></p>
+                        </div>
+
+                        <div class="rowslides">
+                          <div class="columnslides">
+                            <img class="demo cursor" src="imagens/caneca-terceirao.jpg" style="width:90px; height: 90px"
+                              onclick="currentSlide(1)" alt=" ">
+                          </div>
+                          <div class="columnslides">
+                            <img class="demo cursor" src="imagens/caneca-terceirao2.webp"
+                              style="width:90px; height: 90px" onclick="currentSlide(2)" alt=" ">
+                          </div>
+                          <div class="columnslides">
+                            <img class="demo cursor" src="imagens/caneca-terceirao3.jpg"
+                              style="width:90px; height: 90px" onclick="currentSlide(3)" alt=" ">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="containermodalproduto" style="background-color:#f1f1f1">
+                      <h1>Caneca Térmica - Terceirão SESI CG 2024</h1>
+                      <h5 style="text-align:left">Cores Disponíveis:</h5>
+                      <img class="cores-disponiveis" style="width: 100px; height: 40px;margin-right: 10px;"
+                        src="imagens/cores_disponveis_placeholder.png">
+                      <br>
+                      <h4 style="text-align:left">Descrição:</h4>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum numquam nemo officiis, totam
+                        tempora saepe suscipit quasi commodi vero, expedita aspernatur odit repudiandae cumque eius
+                        facere consequatur neque, illum temporibus.</p>
+                      <button type="button" onclick="document.getElementById('id02').style.display='none'"
+                        class="cancelbtnlogin">Cancel</button>
+                    </div>
+                  </form>
+                </div>
               </div>
             </div>
           </div>
@@ -240,6 +299,35 @@
       alert("Dados incorretos, tente novamente");
     }
   }
+  let slideIndex = 1;
+  showSlides(slideIndex);
+
+  function plusSlides(n) {
+    showSlides(slideIndex += n);
+  }
+
+  function currentSlide(n) {
+    showSlides(slideIndex = n);
+  }
+
+  function showSlides(n) {
+    let i;
+    let slides = document.getElementsByClassName("mySlides");
+    let dots = document.getElementsByClassName("demo");
+    let captionText = document.getElementById("caption");
+    if (n > slides.length) { slideIndex = 1 }
+    if (n < 1) { slideIndex = slides.length }
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+    for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex - 1].style.display = "block";
+    dots[slideIndex - 1].className += " active";
+    captionText.innerHTML = dots[slideIndex - 1].alt;
+  }
+
 </script>
 
 </html>

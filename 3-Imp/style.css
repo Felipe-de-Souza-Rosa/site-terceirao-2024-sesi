@@ -334,8 +334,15 @@ img {
 /* Position the image container (needed to position the left and right arrows) */
 .containerslides {
   position: relative;
-}
 
+}
+.containerslidesprodutos {
+  position: relative;
+  margin-top: 5%;
+  margin-left: 5%;
+  width: 40%;
+  height: 40%;
+}
 /* Hide the images by default */
 .mySlides {
   display: none;
@@ -543,6 +550,7 @@ img {
 #reminderList li {
   margin: 5px 0;
   font-size: 16px;
+  width: 400px;
 }
 
 /* Style for the delete buttons */
@@ -1185,5 +1193,18 @@ span.psw {
   word-break: break-word;
   border: 0;
 }
-
-  
+/* Loja modal */
+.imgproduto{
+  width: 40%;
+  height: 40%;
+  margin-left: -50%;
+  margin-top: 5%;
+}  
+.containermodalproduto {
+  padding: 16px;
+  position:relative;
+  width: 45%;
+  height: 100%;
+  top: -435px;
+  left: 750px;
+}
